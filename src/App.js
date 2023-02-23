@@ -44,8 +44,8 @@ function Nav(props) {
 
     lis.push(<li id={'nav_li_'+t.id}>
       <div>
-        <input id={t.id} type="checkbox" onChecked={(e)=>{
-          props.onChecked();
+        <input id={t.id} type="checkbox" onClick={(e)=>{
+          props.onChecked(Number(e.target.id));
         }}/>
         <div class="sg_todo_list">
           <a id={t.id} href={'/read/'+t.id} onClick={(e)=>{
@@ -101,8 +101,7 @@ function App2() {
   ]);
 
   let content = null;
-  let check = <Check todoList={todoList}/>;
-
+  
   if (mode === 'WELCOME') {
     
   } else if (mode === 'READ') {
@@ -110,7 +109,7 @@ function App2() {
   } else if (mode === 'CREATE') {
     content = <Create onCreate={(_todo)=>{
       if (_todo != '') {
-        const newTodo = {id:nextId, todo:_todo};
+        const newTodo = {id:nextId, todo:_todo, check:false};
         const newTodoList = [...todoList];
         newTodoList.push(newTodo);
         
@@ -127,12 +126,13 @@ function App2() {
 
     for (let i = 0; i < newTodoList.length; i++) {
       if (newTodoList[i].id === id) {
-        newTodoList.check = !newTodoList.check;
+        newTodoList[i].check = !newTodoList[i].check;
         break;
       }
     }
 
     setTodoList(newTodoList);
+    setId(null);
     setMode('READ');
   } else if (mode === 'DELETE') {
     const newTodoList = [...todoList];
@@ -154,7 +154,7 @@ function App2() {
       <Header onChangeMode={()=>{
         setMode('WELCOME');
       }} />
-      {check}
+      <Check todoList={todoList} />
       <Hr />
       <content>
         <Nav
