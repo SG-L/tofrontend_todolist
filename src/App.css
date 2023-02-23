@@ -1,0 +1,110 @@
+#root {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(236, 236, 236);
+}
+
+.sg_card {
+    width: 300px;
+    min-height: 450px;
+    margin: 50px 0px;
+    border-radius: 10px;
+    background-color: white;
+    font-family:'Malgun Gothic';
+}
+
+.sg_card header {
+    padding: 5px 20px;
+}
+.sg_card header a {
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+}
+.sg_card header div {
+    font-size: 13px;
+    color: rgb(128, 128, 128);
+}
+
+.sg_card .sg_check {
+    padding: 5px 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color:rgb(44, 192, 7);
+}
+
+.sg_card hr {
+    height: 1px;
+    background-color: rgb(223, 223, 223);
+    border: 0;
+}
+
+.sg_card content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 308px;
+}
+
+.sg_card nav ul {
+    padding: 0px 20px;
+    list-style: none;
+}
+.sg_card nav li {
+    padding: 6px 0px;
+}
+.sg_card nav input {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #999;
+    appearance: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    margin: 0px;
+ }
+.sg_card nav input:checked {
+    background-color: #32e732;
+    border: none;
+ }
+.sg_card .sg_todo_list {
+    float: right;
+    display: flex;
+    justify-content: space-between;
+    width: calc(100% - 30px);
+}
+.sg_card nav a {
+    margin-left: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    color: rgb(95, 95, 95);
+}
+.sg_card nav button {
+    width: 20px;
+    height: 20px;
+    border: 0px;
+    border-radius: 50%;
+    color: black;
+    font-size: 6px;
+    cursor: pointer;
+}
+
+.sg_card footer button {
+    position: relative;
+    top: 25px;
+    display: block;
+    margin: auto;
+    width: 50px;
+    height: 50px;
+    border: 0px;
+    border-radius: 50%;
+    background-color:rgb(53, 238, 167);
+    color: white;
+    font-size: 36px;
+    cursor: pointer;
+}
+
+.sg_card article {
+    padding: 0px 20px;
+    font-size: 
+}
